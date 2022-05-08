@@ -42,7 +42,7 @@ namespace AddRoomsAndMarksPlugin
                     string nameLevel = roomById.Level.Name.Substring(8); //Вытаскиваем № уровня, обрезаем лишние символы
                     //string nameNumberRoom = roomById.Name.Substring(10); //Аналогично № помещения
                     string nameNumberRoom = roomById.Number;
-                    roomById.Number = string.Empty;
+                    roomById.Number = string.Empty; roomById.Name = string.Empty; //Очищаем поле Номер и Имя
                     //roomById.Name = $"{nameLevel}_{nameNumberRoom}"; //Присваиваем данному помещению сформированное имя в Name
                     roomById.Number = $"{nameLevel}_{nameNumberRoom}"; //Присваиваем данному помещению сформированное имя в Number, чтобы был ов рамочке
                     doc.Create.NewRoomTag(new LinkElementId(roomId), new UV(0, 0), null);
